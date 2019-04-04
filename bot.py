@@ -17,7 +17,7 @@ def bot_login():
     return r
 
 def run_bot(r, dice_rolled):
-    print ("Searching last 1000 comments looking for players rolling dices...")
+    print ("Searching last 1000 comments looking for players rolling dice...")
 
     for comment in r.subreddit('RPG_Dice_Bot').comments(limit=1000):
         if "RollD20!" in comment.body and comment.permalink not in dice_rolled:
