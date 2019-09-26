@@ -22,3 +22,5 @@ To change a die or to create new dice, edit:
         with open ("dice_rolled.txt", "a") as f:
             f.write(comment.permalink + "\n")
             
+## Credits
+A special thanks to [Yashar](https://github.com/yashar1)'s [Reddit Comment Bot code and README](https://github.com/yashar1/reddit-comment-bot) for the introductory lessons they provided in the past.
