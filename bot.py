@@ -11,7 +11,7 @@ def __init__():
     return r
 
 
-def run_bot(r, dice_rolled):
+def roll_dice(r, dice_rolled):
     for comment in r.subreddit('RPG_Dice_Bot').comments(limit=1000):
         if "RollD20!" in comment.body and comment.permalink not in dice_rolled:
             comment.reply("*ALEA IACTA EST*: " + "🎲**" + str(random.randint(1,20)) + "**🎲")
@@ -51,7 +51,7 @@ def run_bot(r, dice_rolled):
     time.sleep(10)
 
     
-def get_saved_comments():
+def get_saved_dice():
     if not os.path.isfile("dice_rolled.txt"):
         dice_rolled = []
     else:
@@ -63,6 +63,6 @@ def get_saved_comments():
 
 
 r = __init__()
-dice_rolled = get_saved_comments()
+dice_rolled = get_saved_dice()
 while True:
-    run_bot(r, dice_rolled)
+    roll_dice(r, dice_rolled)
