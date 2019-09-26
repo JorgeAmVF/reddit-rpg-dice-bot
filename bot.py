@@ -6,14 +6,9 @@ import os
 import random
 
 
-def bot_login():
-    print ("Logging in...")
-    r = praw.Reddit(username = config.username,
-                password = config.password,
-                client_id = config.client_id,
-                client_secret = config.client_secret,
-                user_agent = "reddit:r/RPG_Dice_Bot:vAlpha (by u/RPG_Dice_Bot)")
-    print ("Logged!")
+def __init__():
+    r = praw.Reddit('bot')
+    print ('Logged.')
     return r
 
 
@@ -100,7 +95,7 @@ def get_saved_comments():
     return dice_rolled
 
 
-r = bot_login()
+r = __init__()
 dice_rolled = get_saved_comments()
 print (dice_rolled)
 while True:
