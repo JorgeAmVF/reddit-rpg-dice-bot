@@ -16,11 +16,11 @@ To change the subreddit where it runs, edit:
 
 To change a die or to create new dice, edit:
 
-    if "RollD20!" in comment.body and comment.permalink not in dice_rolled:
-        comment.reply("*ALEA IACTA EST*: " + "🎲**" + str(random.randint(1,20)) + "**🎲")
+    if 'RollD20!' in comment.body and comment.permalink not in dice_rolled:
+        comment.reply('*ALEA IACTA EST*: ' + '🎲**' + str(random.randint(1,20)) + '**🎲')
         dice_rolled.append(comment.permalink)
-        with open ("dice_rolled.txt", "a") as f:
-            f.write(comment.permalink + "\n")
+        with open ('dice_rolled.txt', 'a') as f:
+            f.write(comment.permalink + '\n')
             
 ## Credits
 A special thanks to [Yashar](https://github.com/yashar1)'s [Reddit Comment Bot code and README](https://github.com/yashar1/reddit-comment-bot) for the introductory lessons they provided in the past.
